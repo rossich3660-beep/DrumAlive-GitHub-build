@@ -5,6 +5,7 @@ FetchContent_Declare(JUCE GIT_REPOSITORY https://github.com/juce-framework/JUCE.
 FetchContent_MakeAvailable(JUCE)
 juce_add_binary_data(DrumAliveAssets SOURCES Assets/snare.jpg)
 juce_add_plugin(DrumAlive COMPANY_NAME "DrumAlive Audio" BUNDLE_ID com.drumalive.plugin PLUGIN_MANUFACTURER_CODE DrAl PLUGIN_CODE DrA1 FORMATS VST3 PRODUCT_NAME "DrumAlive")
+juce_generate_juce_header(DrumAlive)
 target_sources(DrumAlive PRIVATE Source/PluginProcessor.cpp Source/PluginEditor.cpp)
 target_compile_features(DrumAlive PRIVATE cxx_std_17)
 target_compile_definitions(DrumAlive PUBLIC JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
